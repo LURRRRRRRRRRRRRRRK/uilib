@@ -2420,12 +2420,12 @@ function library:CreateWindow(name, size, hidebutton)
                 end
 
                 function colorpicker:Set(value)
-                    local color = Color3.new(math.clamp(value.r, 0, 1), math.clamp(value.g, 0, 1), math.clamp(value.b, 0, 1))
+                    local color = Color3.fromRGB(math.clamp(value.r, 0, 1), math.clamp(value.g, 0, 1), math.clamp(value.b, 0, 1))
                     colorpicker.value = color
                     if colorpicker.flag and colorpicker.flag ~= "" then
                         library.flags[colorpicker.flag] = color
                     end
-                    local clr = Color3.new(math.clamp(color.R / 1.7, 0, 1), math.clamp(color.G / 1.7, 0, 1), math.clamp(color.B / 1.7, 0, 1))
+                    local clr = Color3.fromRGB(math.clamp(color.R / 1.7, 0, 1), math.clamp(color.G / 1.7, 0, 1), math.clamp(color.B / 1.7, 0, 1))
                     colorpicker.Gradient.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0.00, color), ColorSequenceKeypoint.new(1.00, clr) })
                     pcall(colorpicker.callback, color)
                 end
