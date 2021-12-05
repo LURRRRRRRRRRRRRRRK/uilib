@@ -2261,7 +2261,7 @@ function library:CreateWindow(name, size, hidebutton)
                 colorpicker.Gradient = Instance.new("UIGradient", colorpicker.Main)
                 colorpicker.Gradient.Rotation = 90
 
-                local clr = Color3.new(math.clamp(colorpicker.value.R / 1.7, 0, 1), math.clamp(colorpicker.value.G / 1.7, 0, 1), math.clamp(colorpicker.value.B / 1.7, 0, 1))
+                local clr = Color3.fromRGB(math.clamp(colorpicker.value.R / 1.7, 0, 1), math.clamp(colorpicker.value.G / 1.7, 0, 1), math.clamp(colorpicker.value.B / 1.7, 0, 1))
                 colorpicker.Gradient.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0.00, colorpicker.value), ColorSequenceKeypoint.new(1.00, clr) })
 
                 colorpicker.BlackOutline2 = Instance.new("Frame", colorpicker.Main)
